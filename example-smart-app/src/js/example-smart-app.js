@@ -64,9 +64,9 @@
           p.note1 = 'Test';
           /*p.note2 = getObservationMembers(byCodes('62365-2'));
           p.note3 = getObservationMembers(byCodes('64295-9'));
-          p.note4 = getObservationMembers(byCodes('11500-6'));
-          p.note5 = getObservationMembers(byCodes('11492-6'));
-          p.note6 = getObservationMembers(byCodes('11505-5'));*/
+          p.note4 = getObservationMembers(byCodes('11500-6'));*/
+          p.note5 = getObservationString(byCodes('11492-6'));
+          p.note6 = getObservationMembers(byCodes('11505-5'));
 
           ret.resolve(p);
         });
@@ -129,13 +129,14 @@
   }
   
   function getObservationString(ob) {
-    if (typeof ob != 'undefined' &&
+    /*if (typeof ob != 'undefined' &&
         typeof ob.valueCodeableConcept != 'undefined' &&
         typeof ob.valueCodeableConcept.text != 'undefined') {
           return ob.valueCodeableConcept.text;
     } else {
       return undefined;
-    }
+    }*/
+    return '-test-';
   }
   
   function getObservationMembers(ob) {
