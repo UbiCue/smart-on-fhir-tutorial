@@ -138,10 +138,11 @@
   }
   
   function getObservationMembers(ob) {
-    var allMembers = ob.length+": ";
+    return typeof ob
+    /*var allMembers = ob.length+": ";
     for (property in ob) {
       allMembers += property+', ';
-    }
+    }*/
   }
 
   window.drawVisualization = function(p) {
