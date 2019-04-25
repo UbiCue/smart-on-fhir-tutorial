@@ -15,9 +15,9 @@
                     type: 'Observation',
                     query: {
                       code: {
-                        $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
-                              'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
-                              'http://loinc.org|2089-1', 'http://loinc.org|55284-4']
+                        $or: ['http://loinc.org|61133-5', 'http://loinc.org|62365-2',
+                              'http://loinc.org|64295-9', 'http://loinc.org|11500-6',
+                              'http://loinc.org|11492-6', 'http://loinc.org|11505-5']
                       }
                     }
                   });
@@ -36,7 +36,7 @@
             lname = patient.name[0].family.join(' ');
           }
 
-          var height = byCodes('8302-2');
+          /*var height = byCodes('8302-2');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
@@ -58,7 +58,14 @@
           }
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
-          p.ldl = getQuantityValueAndUnit(ldl[0]);
+          p.ldl = getQuantityValueAndUnit(ldl[0]);*/
+          
+          p.note1 = byCodes('61133-5');
+          p.note2 = byCodes('62365-2');
+          p.note3 = byCodes('64295-9');
+          p.note4 = byCodes('11500-6');
+          p.note5 = byCodes('11492-6');
+          p.note6 = byCodes('11505-5');
 
           ret.resolve(p);
         });
@@ -83,6 +90,12 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      note1: {value: ''},
+      note2: {value: ''},
+      note3: {value: ''},
+      note4: {value: ''},
+      note5: {value: ''},
+      note6: {value: ''}
     };
   }
 
@@ -121,11 +134,17 @@
     $('#lname').html(p.lname);
     $('#gender').html(p.gender);
     $('#birthdate').html(p.birthdate);
-    $('#height').html(p.height);
+    /*$('#height').html(p.height);
     $('#systolicbp').html(p.systolicbp);
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
-    $('#hdl').html(p.hdl);
+    $('#hdl').html(p.hdl);*/
+    $('#note1').html(p.note1);
+    $('#note2').html(p.note2);
+    $('#note3').html(p.note3);
+    $('#note4').html(p.note4);
+    $('#note5').html(p.note5);
+    $('#note6').html(p.note6);
   };
 
 })(window);
