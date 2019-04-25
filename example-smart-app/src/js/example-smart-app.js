@@ -163,9 +163,9 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);*/
     $('#note1').html(p.note1);
-    $('#note2').html('TEST');
+    $('#note2').html(p.note5);
     $('#note3').html(p.note3);
-    $('#note4').html(p.lname);
+    $('#note4').html(p.note4);
     $('#note5').html(p.note5);
     $('#note6').html(p.note6);
   };
