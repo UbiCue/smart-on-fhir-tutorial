@@ -60,12 +60,13 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);*/
           
-          p.note1 = getObservationMembers(byCodes('61133-5'));
-          p.note2 = getObservationMembers(byCodes('62365-2'));
+          //p.note1 = getObservationMembers(byCodes('61133-5'));
+          p.note1 = 'Test';
+          /*p.note2 = getObservationMembers(byCodes('62365-2'));
           p.note3 = getObservationMembers(byCodes('64295-9'));
           p.note4 = getObservationMembers(byCodes('11500-6'));
           p.note5 = getObservationMembers(byCodes('11492-6'));
-          p.note6 = getObservationMembers(byCodes('11505-5'));
+          p.note6 = getObservationMembers(byCodes('11505-5'));*/
 
           ret.resolve(p);
         });
