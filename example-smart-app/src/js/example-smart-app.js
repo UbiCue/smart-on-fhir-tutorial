@@ -161,7 +161,7 @@
     $('#note1').html(p.note1);
     $('#note2').html('TEST');
     $('#note3').html(p.note3);
-    $('#note4').html(p.note4);
+    $('#note4').html(p.lname);
     $('#note5').html(p.note5);
     $('#note6').html(p.note6);
   };
