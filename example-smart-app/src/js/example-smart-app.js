@@ -92,7 +92,7 @@
       hdl: {value: ''},
       note1: {value: ''},
       note2: {value: ''},
-      note3: {value: 'test'},
+      note3: {value: ''},
       note4: {value: ''},
       note5: {value: ''},
       note6: {value: ''}
@@ -142,9 +142,9 @@
     //return typeof ob
     var numObservations = ob.length;
     var allMembers = numObservations+": ";
-    for (var i=0; i<numObservations; i++ {
-      for (property in ob[i]) {
-        allMembers += property+', ';
+    for (var i=0; i<numObservations; i++) {
+      for (x in ob[i]) {
+        allMembers += x+', ';
       }
     }
     return allMembers;
@@ -162,7 +162,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);*/
-    $('#note1').html(p.note1);
+    $('#note1').html('NOTE: '+p.note1);
     $('#note2').html(p.note5);
     $('#note3').html(p.note3);
     $('#note4').html(p.note4);
