@@ -40,16 +40,16 @@
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
-          var ldl = byCodes('2089-1');
+          var ldl = byCodes('2089-1');*/
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
           p.gender = gender;
           p.fname = fname;
           p.lname = lname;
-          p.height = getQuantityValueAndUnit(height[0]);
+          //p.height = getQuantityValueAndUnit(height[0]);
 
-          if (typeof systolicbp != 'undefined')  {
+          /*if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
 
@@ -60,12 +60,12 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);*/
           
-          p.note1 = byCodes('61133-5');
-          p.note2 = byCodes('62365-2');
-          p.note3 = byCodes('64295-9');
-          p.note4 = byCodes('11500-6');
-          p.note5 = byCodes('11492-6');
-          p.note6 = byCodes('11505-5');
+          p.note1 = getObservationMembers(byCodes('61133-5'));
+          p.note2 = getObservationMembers(byCodes('62365-2'));
+          p.note3 = getObservationMembers(byCodes('64295-9'));
+          p.note4 = getObservationMembers(byCodes('11500-6'));
+          p.note5 = getObservationMembers(byCodes('11492-6'));
+          p.note6 = getObservationMembers(byCodes('11505-5'));
 
           ret.resolve(p);
         });
@@ -124,6 +124,23 @@
           return ob.valueQuantity.value + ' ' + ob.valueQuantity.unit;
     } else {
       return undefined;
+    }
+  }
+  
+  function getObservationString(ob) {
+    if (typeof ob != 'undefined' &&
+        typeof ob.valueCodeableConcept != 'undefined' &&
+        typeof ob.valueCodeableConcept.text != 'undefined') {
+          return ob.valueCodeableConcept.text;
+    } else {
+      return undefined;
+    }
+  }
+  
+  function getObservationMembers(ob) {
+    var allMembers = ob.length+": ";
+    for (property in ob) {
+      allMembers += property+', ';
     }
   }
 
