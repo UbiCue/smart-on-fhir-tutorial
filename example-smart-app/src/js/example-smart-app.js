@@ -62,9 +62,10 @@
           
           //p.note1 = getObservationMembers(byCodes('61133-5'));
           p.note1 = 'Test';
-          /*p.note2 = getObservationMembers(byCodes('62365-2'));
-          p.note3 = getObservationMembers(byCodes('64295-9'));
-          p.note4 = getObservationMembers(byCodes('11500-6'));*/
+          //p.note2 = getObservationMembers(byCodes('62365-2'));
+          var n3 = byCodes('64295-9');
+          p.note3 = getObservationString(n3[0]);
+          //p.note4 = getObservationMembers(byCodes('11500-6'));
           p.note5 = getObservationString(byCodes('11492-6'));
           p.note6 = getObservationMembers(byCodes('11505-5'));
 
@@ -140,11 +141,12 @@
   }
   
   function getObservationMembers(ob) {
-    return typeof ob
-    /*var allMembers = ob.length+": ";
-    for (property in ob) {
+    //return typeof ob
+    var allMembers = ob.length+": ";
+    /*for (property in ob) {
       allMembers += property+', ';
     }*/
+    return allMembers;
   }
 
   window.drawVisualization = function(p) {
