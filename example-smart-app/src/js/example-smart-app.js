@@ -93,7 +93,7 @@
       hdl: {value: ''},
       note1: {value: ''},
       note2: {value: ''},
-      note3: {value: ''},
+      note3: {value: 'test'},
       note4: {value: ''},
       note5: {value: ''},
       note6: {value: ''}
@@ -159,7 +159,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);*/
     $('#note1').html(p.note1);
-    $('#note2').html(p.note2);
+    $('#note2').html('TEST');
     $('#note3').html(p.note3);
     $('#note4').html(p.note4);
     $('#note5').html(p.note5);
