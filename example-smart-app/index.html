@@ -22,6 +22,23 @@
     <div id='holder' >
       <h2>Example-SMART-App</h2>
 
+      <h2>User</h2>
+      <table>
+        <tr>
+          <th>Name:</th>
+          <td id='username'></td>
+        </tr>
+        <tr>
+          <th>ID:</th>
+          <td id='userid'></td>
+        </tr>
+        <tr>
+          <th>Domain:</th>
+          <td id='domain'></td>
+        </tr>
+      </table>
+      <h2>Observation Resource</h2>
+      <table>
       <h2>Patient Resource</h2>
       <table>
         <tr>
@@ -39,6 +56,10 @@
         <tr>
           <th>Date of Birth:</th>
           <td id='birthdate'></td>
+        </tr>
+        <tr>
+          <th>ID:</th>
+          <td id='patientid'></td>
         </tr>
       </table>
       <h2>Observation Resource</h2>
@@ -89,8 +110,8 @@
     <script>
       extractData().then(
         //Display Patient Demographics and Observations if extractData was success
-        function(p) {
-          drawVisualization(p);
+        function(p,sys) {
+          drawVisualization(p,sys);
         },
 
         //Display 'Failed to call FHIR Service' if extractData failed
