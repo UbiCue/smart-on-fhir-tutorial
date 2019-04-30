@@ -76,7 +76,7 @@
           p.note5 = getObservationMembers(byCodes('11492-6'));
           p.note6 = getObservationMembers(byCodes('11505-5'));
 
-          ret.resolve(p);
+          ret.resolve(p, sys);
         });
       } else {
         onError();
