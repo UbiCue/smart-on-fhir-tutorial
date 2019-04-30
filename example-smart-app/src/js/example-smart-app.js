@@ -144,7 +144,8 @@
   function getObservationMembers(ob) {
     //return typeof ob
     var numObservations = ob.length;
-    var allMembers = numObservations+": ";
+    //var allMembers = numObservations+": ";
+    var allMembers = "";
     for (var i=0; i<numObservations; i++) {
       for (x in ob[i]) {
         allMembers += x+', ';
