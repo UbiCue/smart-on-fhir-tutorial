@@ -44,8 +44,14 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
+          
+          var sys = initSystemInfo();
+          sys.userid = smart.tokenResponse.user;
+          sys.username = smart.tokenResponse.username;
+          sys.domain = smart.state.provider.name;
 
           var p = defaultPatient();
+          p.id = patient.id;
           p.birthdate = patient.birthDate;
           p.gender = gender;
           p.fname = fname;
@@ -84,6 +90,7 @@
 
   function defaultPatient(){
     return {
+      id: {value: ''},
       fname: {value: ''},
       lname: {value: ''},
       gender: {value: ''},
@@ -101,6 +108,14 @@
       note6: {value: ''}
     };
   }
+  
+  function initSystemInfo() {
+    return {
+      userid: {value: ''},
+      username: {value: ''},
+      domain: {value: ''}
+    };
+  };
 
   function getBloodPressureValue(BPObservations, typeOfPressure) {
     var formattedBPObservations = [];
@@ -154,9 +169,15 @@
     return allMembers;
   }
 
-  window.drawVisualization = function(p) {
+  window.drawVisualization = function(p,sys) {
     $('#holder').show();
     $('#loading').hide();
+    
+    $('#userid').html(sys.userid);
+    $('#username').html(sys.username);
+    $('#domain').html(sys.domain);
+    
+    $('#patientid').html(p.id);
     $('#fname').html(p.fname);
     $('#lname').html(p.lname);
     $('#gender').html(p.gender);
