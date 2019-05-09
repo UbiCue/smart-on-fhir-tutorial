@@ -17255,7 +17255,9 @@ BBClient.ready = function(input, callback, errback){
 };
 
 function providers(fhirServiceUrl, provider, callback, errback){
-
+  if (typeof fhirServiceUrl === 'undefined') {
+    fhirServiceUrl = "";
+  }
   // Shim for pre-OAuth2 launch parameters
   if (isBypassOAuth()){
     process.nextTick(function(){
