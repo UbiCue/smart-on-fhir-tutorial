@@ -30,9 +30,11 @@
         'scope':  'patient/Patient.read patient/Observation.read launch online_access openid profile'
       }, function(err, data) {
         if (err) {
-          console.log("Error");
+          alert(err);
         }
-        console.log(data);
+        else {
+          alert(data);
+        }
       });
     </script>
     <div class="spinner">
