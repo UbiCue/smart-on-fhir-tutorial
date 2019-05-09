@@ -17344,6 +17344,7 @@ BBClient.authorize = function(params, errback){
   if (!errback){
     errback = function(){
         console.log("Failed to discover authorization URL given", params);
+	alert("Unable to authorize user for access");
     };
   }
   
