@@ -20,7 +20,10 @@
                               'http://loinc.org|2089-1', 'http://loinc.org|55284-4',
                               'http://loinc.org|61133-5', 'http://loinc.org|62365-2',
                               'http://loinc.org|64295-9', 'http://loinc.org|11500-6',
-                              'http://loinc.org|11492-6', 'http://loinc.org|11505-5']
+                              'http://loinc.org|11492-6', 'http://loinc.org|11505-5',
+                              'http://loinc.org|18726-0', 'http://loinc.org|89806-4',
+                              'http://loinc.org|72556-4', 'http://loinc.org|75238-6',
+                              'http://loinc.org|75490-3', 'http://loinc.org|83582-7']
                       }
                     }
                   });
@@ -75,6 +78,12 @@
           p.note4 = getObservationMembers(byCodes('11500-6'));
           p.note5 = getObservationMembers(byCodes('11492-6'));
           p.note6 = getObservationMembers(byCodes('11505-5'));
+          p.rad1 = getObservationMembers(byCodes('18726-0'));
+          p.rad2 = getObservationMembers(byCodes('89806-4'));
+          p.rad3 = getObservationMembers(byCodes('72556-4'));
+          p.rad4 = getObservationMembers(byCodes('75238-6'));
+          p.rad5 = getObservationMembers(byCodes('75490-3'));
+          p.rad6 = getObservationMembers(byCodes('83582-7'));
 
           ret.resolve(p, sys);
         });
@@ -105,7 +114,13 @@
       note3: {value: ''},
       note4: {value: ''},
       note5: {value: ''},
-      note6: {value: ''}
+      note6: {value: ''},
+      rad1: {value: ''},
+      rad2: {value: ''},
+      rad3: {value: ''},
+      rad4: {value: ''},
+      rad5: {value: ''},
+      rad6: {value: ''}
     };
   }
   
@@ -188,6 +203,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#notes').html(p.note1 + "; "+p.note2+ "; "+p.note3+ "; "+p.note4+ "; "+p.note5+ "; "+p.note6);
+    $('#radiology').html(p.rad1 + "; "+p.rad2+ "; "+p.rad3+ "; "+p.rad4+ "; "+p.rad5+ "; "+p.rad6);
   };
 
 })(window);
